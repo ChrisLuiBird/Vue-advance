@@ -6,12 +6,10 @@ import Vue from 'vue'
 import App from './App.vue'
 //关闭生产提示
 Vue.config.productionTip = false
-//引入 vuex
-import Vuex from 'vuex'
-Vue.use(Vuex)
 
 new Vue({
   render: h => h(App),
-
-  store: 'haha'
+  beforeCreate(){
+    Vue.prototype.$bus = this
+  }
 }).$mount('#app')
