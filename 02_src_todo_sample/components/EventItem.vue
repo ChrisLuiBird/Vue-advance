@@ -30,6 +30,7 @@ export default {
 			this.$bus.$emit('handleUpdate',todoObj.id,e.target.value)
 		},
 		handleEdit(todoObj){
+			
 			//todoObj.hasOwnProperty('isEdit') 不推荐使用， 因为客户端传恶意数据可导致服务器崩溃
 			if(!Object.prototype.hasOwnProperty.call(todoObj, 'isEdit')){
 				this.$set(todoObj,'isEdit', true);
